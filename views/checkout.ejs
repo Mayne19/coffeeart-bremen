@@ -5,13 +5,13 @@
         <h1>Bestellung eingegangen</h1>
         <p>Vielen Dank, <strong><%= vorname %> <%= nachname %></strong>! Deine Bestellung wurde aufgenommen.</p>
         <p>Dies ist eine Demo - die Bestellung wurde nicht an ein echtes System übertragen.</p>
-        <a href="/shop" class="btn btn-primary">Weiter einkaufen</a>
+        <a href="/shop" class="btn btn-primary"><i class="hgi-stroke hgi-shopping-bag-03" aria-hidden="true"></i><span>Weiter einkaufen</span></a>
       </div>
     <% } else if (!cart || cart.length === 0) { %>
       <div class="empty-state">
         <h1>Warenkorb ist leer</h1>
         <p class="lead">Dein Warenkorb enthält keine Produkte. Gehe zum Shop, um Kaffee hinzuzufügen.</p>
-        <a href="/shop" class="btn btn-primary">Zum Shop</a>
+        <a href="/shop" class="btn btn-primary"><i class="hgi-stroke hgi-shopping-bag-03" aria-hidden="true"></i><span>Zum Shop</span></a>
       </div>
     <% } else { %>
       <h1>Warenkorb</h1>
@@ -41,7 +41,7 @@
                   <p><%= entry.product.origin %> · <%= entry.product.taste %></p>
                   <p><%= entry.product.kaffeesorte %> · <%= entry.product.weight %>g</p>
                   <form method="POST" action="/cart/remove/<%= entry.product.id %>">
-                    <button type="submit" class="remove-cart-btn">Entfernen</button>
+                    <button type="submit" class="remove-cart-btn"><i class="hgi-stroke hgi-shopping-cart-remove-02" aria-hidden="true"></i><span>Entfernen</span></button>
                   </form>
                 </div>
                 <div class="cart-item-meta">
@@ -93,7 +93,7 @@
               <label for="lieferanschrift">Lieferanschrift</label>
               <input type="text" id="lieferanschrift" name="lieferanschrift" placeholder="Abweichende Lieferadresse (optional)">
             </div>
-            <button type="submit" class="btn btn-primary btn-full">Bestellung abschließen</button>
+            <button type="submit" class="btn btn-primary btn-full"><i class="hgi-stroke hgi-payment-success-02" aria-hidden="true"></i><span>Bestellung abschließen</span></button>
           </form>
         </aside>
       </div>

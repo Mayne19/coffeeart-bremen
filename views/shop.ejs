@@ -5,7 +5,7 @@
 
     <div class="shop-layout">
       <aside class="shop-sidebar" aria-label="Produktfilter">
-        <h2>Filter</h2>
+        <h2><i class="hgi-stroke hgi-filter-horizontal" aria-hidden="true"></i><span>Filter</span></h2>
         <form class="filter-form filter-form-sidebar" method="GET" action="/shop">
           <div class="filter-group">
             <label for="origin">Herkunft</label>
@@ -62,8 +62,8 @@
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary">Filtern</button>
-          <a href="/shop" class="filter-reset">Filter zurücksetzen</a>
+          <button type="submit" class="btn btn-primary"><i class="hgi-stroke hgi-filter" aria-hidden="true"></i><span>Filtern</span></button>
+          <a href="/shop" class="filter-reset"><i class="hgi-stroke hgi-filter-reset" aria-hidden="true"></i><span>Filter zurücksetzen</span></a>
         </form>
       </aside>
 
@@ -76,8 +76,8 @@
         <div class="product-grid shop-product-grid">
           <% products.forEach(function(product) { %>
             <div class="product-card">
-              <a href="/shop/<%= product.id %>" class="product-card-name"><%= product.name %></a>
               <a href="/shop/<%= product.id %>"><img src="<%= product.image %>" alt="<%= product.name %>" class="product-card-image"></a>
+              <a href="/shop/<%= product.id %>" class="product-card-name"><%= product.name %></a>
               <div class="product-info">
                 <p class="product-origin"><%= product.origin %></p>
                 <p class="product-taste"><%= product.taste %> · Stärke <%= product.strength %> / 5</p>
@@ -86,7 +86,7 @@
               <div class="product-card-footer">
                 <span class="product-price"><%= product.price.toFixed(2).replace('.', ',') %> €</span>
                 <% if (product.orderInfo.available) { %>
-                  <button class="btn-cart add-to-cart-btn" data-id="<%= product.id %>">In den Warenkorb</button>
+                  <button class="btn-cart add-to-cart-btn" data-id="<%= product.id %>"><i class="hgi-stroke hgi-shopping-cart-add-02" aria-hidden="true"></i><span>In den Warenkorb</span></button>
                 <% } else { %>
                   <span class="product-unavailable">Ausverkauft</span>
                 <% } %>
@@ -98,7 +98,7 @@
         <% if (products.length === 0) { %>
           <div class="empty-state">
             <p>Keine Produkte gefunden. Bitte Filter anpassen.</p>
-            <a href="/shop" class="btn btn-primary">Alle Produkte anzeigen</a>
+            <a href="/shop" class="btn btn-primary"><i class="hgi-stroke hgi-shopping-bag-03" aria-hidden="true"></i><span>Alle Produkte anzeigen</span></a>
           </div>
         <% } %>
       </div>

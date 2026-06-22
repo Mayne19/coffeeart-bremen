@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
   res.render("layout", {
     title: "CoffeeArt Bremen",
     body: "index",
-    featuredProducts: products.slice(0, 3),
+    featuredProducts: products.slice(0, 4),
     featuredArticles: articles.slice(0, 2),
   });
 });
